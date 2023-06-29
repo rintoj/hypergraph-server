@@ -23,7 +23,7 @@ function createServer({
   controllers = [],
   port,
   apiRoot = '/',
-  middleware = [],
+  middlewares = [],
   payloadSize = '100mb',
   socketIO,
   multer,
@@ -52,7 +52,7 @@ function createServer({
       disableUnsecureConstructor: true,
     },
     middlewares: [
-      ...middleware,
+      ...middlewares,
       cookieParser(),
       compress({}),
       methodOverride(),
@@ -68,7 +68,7 @@ export interface ServerConfiguration {
   controllers: string[]
   port: number
   apiRoot?: string
-  middleware?: ClassType[] | any[]
+  middlewares?: ClassType[] | any[]
   socketIO?: Partial<SocketIO.ServerOptions>
   multer?: Partial<TsED.MulterOptions>
   payloadSize?: string
@@ -79,7 +79,7 @@ export async function bootstrapServer({
   port,
   apiRoot,
   payloadSize,
-  middleware,
+  middlewares,
   socketIO,
   multer,
 }: ServerConfiguration) {
@@ -89,7 +89,7 @@ export async function bootstrapServer({
       port,
       apiRoot,
       payloadSize,
-      middleware,
+      middlewares,
       socketIO,
       multer,
     })
