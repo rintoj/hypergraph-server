@@ -1,17 +1,19 @@
-# hypergraph-server
+# Hypergraph Server
+
+With the help of this package you can spin off a service to serve a REST or GraphQL endpoint
 
 ## Install
 
 Using npm:
 
 ```sh
-npm install hypergraph-server
+npm install @hgraph/server
 ```
 
 Using yarn:
 
 ```sh
-yarn add hypergraph-server
+yarn add @hgraph/server
 ```
 
 ## Usage
@@ -30,7 +32,7 @@ Setup `src/index.ts`
 import 'reflect-metadata'
 
 import { initializeGraphqlServer } from 'hypergraph-graphql'
-import { bootstrapServer, createMiddleware } from 'hypergraph-server'
+import { bootstrapServer, createMiddleware } from '@hgraph/server'
 import { createSchema } from './schema'
 
 async function run() {
@@ -47,7 +49,7 @@ void run()
 Add controller
 
 ```ts
-import { Controller, Get } from 'hypergraph-server'
+import { Controller, Get } from '@hgraph/server'
 
 @Controller('/user')
 export class UserController {

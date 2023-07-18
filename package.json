@@ -1,9 +1,9 @@
 {
-  "name": "hypergraph-server",
+  "name": "@hgraph/server",
   "version": "0.0.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "description": "Spin off a service to serve a rest or graphql endpoint",
+  "description": "You can spin off a service to serve a REST or GraphQL endpoint",
   "author": {
     "name": "Rinto Jose",
     "email": "rintoj@gmail.com"
