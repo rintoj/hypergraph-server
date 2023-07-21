@@ -41,6 +41,7 @@ function createServer({
     acceptMimes: ['application/json'],
     socketIO,
     logger: {
+      logRequest: false,
       ignoreUrlPatterns: ['/api/status'],
     },
     mount: {
